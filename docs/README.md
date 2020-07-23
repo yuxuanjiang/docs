@@ -1,3 +1,3 @@
-# Headline
+# Why Create this project?
 
-> An awesome project.
+# How Can I Join?
