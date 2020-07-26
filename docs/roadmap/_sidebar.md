@@ -4,6 +4,7 @@
     * [Computer Communication & Networking](/roadmap/foundation/networking)
     * [HTTP & HTTPS 协议](/roadmap/foundation/http)
 * **数据结构**
+    * [Array](/roadmap/data_structure/array)
     * [List](/roadmap/data_structure/list)
     * [Stack](/roadmap/data_structure/stack)
     * [Queue](/roadmap/data_structure/queue)
