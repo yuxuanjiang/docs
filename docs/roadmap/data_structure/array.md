@@ -276,3 +276,55 @@ public static int sum(int[] nums){
     * get(index) : `O(1)`
     * contains(e) : `O(n)`
     * find(e) : `O(n)`
+
+
+
+## resize 的时间复杂度
+
+* resize : `O(n)`
+
+如果一个数组的 `capacity` 一开始为8，那么在第九次进行 addLast操作时，触发了 resize 函数, 总共进行了 9 + 8 = 17 次基本操作。平均每次 addLast 操作，进行了 2次基本操作。
+
+
+
+假设capacity = n,  n+1 次 addLast, 触发 resize, 总共进行 2n+1 次基本操作平均，每次 addLast 操作，进行了2次基本操作。这样均摊计算的话，时间复杂度是 `O(1)`.
+
+
+
+<p class="tip">在这个例子中，这样的均摊复杂度计算(amortized time complexity)，比计算最坏情况有意义。</p>
+
+
+
+## 复杂度震荡
+
+![image-20200726003756137](https://tva1.sinaimg.cn/large/007S8ZIlgy1gh49r5vvlkj31di0igjw6.jpg)
+
+* 出问题的原因: removeLast 时 resize 过于着急 (eager)
+* 解决方案: 使用 lazy
+    * 当 `size == capacity / 4` 时，才将 capacity 减半
+
+
+
+```java
+// 从数组中删除指定 index 的元素， 返回删除的元素
+public T remove(int index){
+    if(index < 0 || index >= size){
+        throw new IllegalArgumentException("Remove failed, Index is out of bound.");
+    }
+
+    T ret = data[index];
+    for(int i=index+1; i<size; i++){
+        data[i - 1] = data[i];
+    }
+    size--;
+    data[size] = null; // loitering objects != memory leak
+
+    if(size == data.length / 4 && data.length / 2 != 0){
+        resize(data.length/2);
+    }
+    return ret;
+}
+```
+
+
+
