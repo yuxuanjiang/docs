@@ -227,7 +227,208 @@ class Array<T>{
 }
 ```
 
+## 数组的基本结构
 
+```java
+class Array{
+	private int[] data;
+    private int size;
+    
+    public Array(int capacity){
+        data = new int[capacity];
+        size = 0;
+    }
+    
+    // 无参数构造函数，默认给予数组的长度为10
+    public Array(){
+        this(10);
+    }
+}
+```
+
+
+
+## 使用泛型构建数组结构
+
+```java
+class Array<T>{
+	private T[] data;
+	private int size;
+	
+	public Array(int capacity){
+		data = (T[])new Object[capacity];
+		size = 0;
+	}
+	
+	public Array(){
+		this(10);
+	}
+}
+```
+
+
+
+## 获取数组的原信息功能
+
+```java
+public boolean isEmpty(){
+	return size == 0;
+}
+
+public boolean isFull(){
+    return size == data.length;
+}
+
+public int getSize(){
+	return size;
+}
+
+public int getCapacity(){
+	return data.length;
+}
+
+@Override
+public String toString(){
+    StringBuilder str = new StringBuilder();
+    str.append(String.format("Array: size = %d, capacity = %d\n", size, data.length));
+    str.append("[");
+    for(int i=0; i<size ;i++){
+        str.append(data[i]);
+        if(i != size - 1){
+            str.append(", ");
+        }
+    }
+    str.append("]");
+    return str.toString();
+}
+```
+
+
+
+## 动态数组的实现
+
+```java
+private void resize(int newCapacity){
+	T[] newData = (T[])new Object[newCapacity];
+	for(int i=0; i<data.length ;i++){
+		newData[i] = data[i];
+	}
+	data = newData;
+}
+```
+
+
+
+## 增加元素的功能
+
+```java
+public void insert(int index, T element){
+	if(index < 0 || index > size){
+		throw new IllegalArgumentException("Insert new element failed, array index is out of bounds");
+	}
+    
+    if(isFull()){ 
+        resize(data.length * 2); 
+    }
+    
+    for(int i=size-1; i>=index; i++){
+        data[i+1] = data[i];
+    }
+    
+    data[index] = element;
+   	size++;
+}
+
+public void addFirst(T element){
+    insert(0, element);
+}
+
+public void addLast(T element){
+    insert(size, element);
+}
+```
+
+
+
+## 删除元素的功能
+
+```java
+public T remove(int index){
+	T res = data[index];
+	
+	for(int i=index+1; i<size ;i++){
+		data[i-1] = data[i];
+	}
+    
+    size--;
+    data[index] = null; // loitering objects != memory leak
+    
+    if(data.length == data.length / 4 && data.length / 2 != 0){
+        resize(data.length / 2);
+    }
+	return res;
+}
+
+public T removeFirst(){
+    return remove(0);
+}
+
+public T removeLast(){
+    return remove(size-1);
+}
+
+public void removeElement(E element){
+    int index = find(element);
+    if(index != -1){
+        remove(element);
+    }
+}
+```
+
+
+
+## 查找元素的功能
+
+```java
+public boolean contains(T element){
+	for(int i=0; i<size ;i++){
+		if(data[i] == element){
+			return true;
+		}
+	}
+	return false;
+}
+
+public int find(T element){
+	for(int i=0; i<size ;i++){
+		if(data[i].equals(element)){
+			return i;
+		}
+	}
+	return -1;
+}
+
+public T get(int index){
+    if(index < 0 || index > size){
+        throw new IllegalArgumentException("Get element failed, array index is out of bounds.");
+    }
+    return data[index];
+}
+```
+
+
+
+## 修改元素的功能
+
+```java
+public void set(int index, T element){
+	if(index < 0 || index > size){
+		throw new IllegalArgumentException("Set element failed, array index is out of bounds.");
+	}
+	
+	data[index] = element;
+}
+```
 
 
 
@@ -295,7 +496,7 @@ public static int sum(int[] nums){
 
 
 
-## 复杂度震荡
+## 复杂度震荡 & resize 功能的优化
 
 ![image-20200726003756137](https://tva1.sinaimg.cn/large/007S8ZIlgy1gh49r5vvlkj31di0igjw6.jpg)
 
@@ -325,6 +526,4 @@ public T remove(int index){
     return ret;
 }
 ```
-
-
 

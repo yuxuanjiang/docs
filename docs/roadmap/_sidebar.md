@@ -5,6 +5,7 @@
     * [HTTP & HTTPS 协议](/roadmap/foundation/http)
 * **数据结构**
     * [Array](/roadmap/data_structure/array)
+    * [Linked List](/roadmap/data_structure/LinkedList)
     * [List](/roadmap/data_structure/list)
     * [Stack](/roadmap/data_structure/stack)
     * [Queue](/roadmap/data_structure/queue)
