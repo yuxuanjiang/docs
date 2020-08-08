@@ -88,6 +88,6 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDE4y8YZOWP1jAKQVX6+ge9DDeskiNQDZVSZIWpXCbK
 
 
 <video controls>
-    <source src="/_media/widnows_sshkeygen.mp4" type="video/mp4">
+    <source src="../_media/widnows_sshkeygen.mp4" type="video/mp4">
 </video>
 
