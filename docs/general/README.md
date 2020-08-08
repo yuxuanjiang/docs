@@ -1,6 +1,6 @@
-# Windows 系统如何生成SSH
+# Windows 系统如何生成SSH Keygen
 
-<p class="warn">Windows系统本身自带的 Command 并不能直接生成 SSH，需要使用 Git Bash 或者 Windows Terminal 来生成 SSH。因此，前提需要在你的 Windows 系统上安装 Git Bash 或者 Terminal。本文将使用 Windows Terminal 来实现 SSH 的生成以及查看。</p>
+<p class="warn">Windows系统本身自带的 Command 并不能直接生成 SSH Keygen，需要使用 Git Bash 或者 Windows Terminal 来生成 SSH。因此，前提需要在你的 Windows 系统上安装 Git Bash 或者 Terminal。本文将使用 Windows Terminal 来实现 SSH 的生成以及查看。</p>
 
 
 
