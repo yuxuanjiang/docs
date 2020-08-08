@@ -8,12 +8,6 @@
 
 
 
-<div id="myCalendar" class="vanilla-calendar"></div>
-
-
-
-
-
 ## 2020-09 [06 - 12]
 
 |                                         | Sunday                                | Monday                                    | Tuesday                                   | Wednesday                                                  | Thursday                              | Friday                                          | Saturday |
