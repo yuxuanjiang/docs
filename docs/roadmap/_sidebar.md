@@ -14,7 +14,7 @@
     * [Recursion](/roadmap/data_structure/recursion)
     * [Set](/roadmap/data_structure/set)
 * **设计模式**
-    * [UML & 软件设计七大原则](/roadmap/design_pattern/)
+    * [UML & 软件设计七大原则](/roadmap/design_pattern/uml)
     * [简单工厂](/roadmap/design_pattern/factory)
     * [工厂方法模式](/roadmap/design_pattern/)
     * [抽象工厂模式](/roadmap/design_pattern/)
