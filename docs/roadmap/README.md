@@ -53,10 +53,9 @@
 ## 容器 (Container)
 
 - 系统学习Docker 践行DevOps理念
-
 - Docker+Kubernetes(k8s)微服务容器化实践
-
 - Docker环境下的前后端分离项目部署与运维
+- Docker+Kubernetes(k8s)微服务容器化实践
 
 ## 前端开发 (Front-end Development)
 
