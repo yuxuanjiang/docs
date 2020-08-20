@@ -13,6 +13,8 @@
     * [Map](/roadmap/data_structure/map)
     * [Recursion](/roadmap/data_structure/recursion)
     * [Set](/roadmap/data_structure/set)
+    * [Prioirty Queue](/roadmap/data_structure/priority_queue)
+    * [Heap](/roadmap/data_structure/heap)
 * **设计模式**
     * [UML & 软件设计七大原则](/roadmap/design_pattern/uml)
     * [简单工厂](/roadmap/design_pattern/simple_factory)
