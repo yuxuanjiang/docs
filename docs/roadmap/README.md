@@ -3,13 +3,13 @@
 
 ## 数据结构&算法 (Data Structure & Algorithm)
 
-- 玩转数据结构
+- ✅ 玩转数据结构 
 
 - 玩转算法系列 - 图论精讲 面试升职必备（Java版）
 
 ## 设计模式 (Design Pattern)
 
-- Java 设计模式精讲 Debug 方式+内存分析
+- ✅ Java 设计模式精讲 Debug 方式+内存分析
 
 - Javascript 设计模式系统讲解与应用
 

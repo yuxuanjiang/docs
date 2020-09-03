@@ -157,5 +157,18 @@ public E replace(E e){
 
 
 
+## Heapify 功能 :  将一个数组转化为 Heap
 
+* heapify: 将任意一个数组整理成堆的形状
+* 将 n 个元素逐个插入到一个空堆中，算法复杂度是 O(nlogn)
+* heapify 的过程，算法复杂度是 O(n)
+
+```java
+public MaxHeap(E[] arr){
+    data = new Array<E>(arr);
+    for(int i = parent(arr.length - 1); i >= 0; i--){
+        siftDown(i);
+    }
+}
+```
 
